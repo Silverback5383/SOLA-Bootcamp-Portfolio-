@@ -7,6 +7,21 @@ timestamp=$(date '+%Y-%m-%d_%H-%M-%S')
 desktop_path="/home/admin1/Desktop"
 report_file="$desktop_path/system_audit_$timestamp.txt"
 
+# System Audit Report
+echo "========== System Audit Report ==========" | tee -a "$report_file"
+echo "Date: $(date)" | tee -a "$report_file"
+echo "User: $USER" | tee -a "$report_file"
+echo "" | tee -a "$report_file"
+
+# System information
+echo "----- System Information -----" | tee -a "$report_file"
+echo "Hostname: $(hostname)" | tee -a "$report_file"
+echo "IP Address: $(hostname -I)" | tee -a "$report_file"
+echo "Uptime: $(uptime -p)" | tee -a "$report_file"
+echo "Kernel Version: $(uname -r)" | tee -a "$report_file"
+echo "" | tee -a "$report_file"
+
+
 # Function to print headers to screen and file
 print_section() {
  echo -e "\n--- $1 -----" | tee -a "$report_file"

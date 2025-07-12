@@ -1,27 +1,22 @@
-# README
+# System Audit Script
 
-## README
+This Bash script performs a basic health and security check on a Linux machine.
 
-### README
+## Features
 
-#### README
+- Displays hostname, IP address, uptime, and kernel version
+- Checks disk usage and warns if it exceeds 80%
+- Lists logged-in users and flags accounts with empty passwords
+- Shows top memory-consuming processes
+- Verifies if essential services are running (systemd, auditd, cron, journald, ufw)
+- Scans logs for failed login attempts
+- Saves a timestamped report to the Desktop
 
-#!/bin/bash
-# Set a timestamp for the audit report name
-timestamp=$(date '+%Y-%m-%d_%H-%M-%S')
+## How to Run
 
-# Define the path to the Desktop
-desktop_path="$HOME/Desktop"
+```bash
+chmod +x system_audit.sh
+./system_audit.sh
 
-# Create the full path for the output file
-report_file="$desktop_path/system_audit_$timestamp.txt"
 
-# Greet the user and begin the report
-echo "==========================================" | tee -a "$report_file"
-echo "     Basic Linux System Audit Script      " | tee -a "$report_file"
-echo "==========================================" | tee -a "$report_file"
-echo "Script started at: $(date)" | tee -a "$report_file"
-echo "Running as user: $USER" | tee -a "$report_file"
-echo "Output file: $report_file" | tee -a "$report_file"
-echo "" | tee -a "$report_file"
 
