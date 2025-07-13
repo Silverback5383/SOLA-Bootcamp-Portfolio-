@@ -15,8 +15,8 @@ This Bash script performs a basic health and security check on a Linux machine.
 ## How to Run
 
 ```bash
-chmod +x system_audit.sh
-./system_audit.sh
+chmod +x Bash-Scripting-Project/ramon_rice_bash-scripting-project.sh
+./Bash-Scripting-Project/ramon_rice_bash-scripting-project.sh
 
 ## Self-Evaluation
 
